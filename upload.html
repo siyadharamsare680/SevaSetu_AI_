@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SevaSetu AI | Document Upload</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 560px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 42px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .card h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        .card p {
+            text-align: center;
+            font-size: 15px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 22px;
+            font-size: 14px;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: none;
+            background-color: #facc15;
+            color: #1f2937;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #fde047;
+        }
+
+        .footer-note {
+            margin-top: 28px;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.85;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>SevaSetu AI Portal</h1>
+    <p>AI-assisted government form processing system</p>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="files" multiple required>
+        <button class="submit-btn" type="submit">Upload & Process</button>
+    </form>
+
+    <div class="footer-note">
+        © Digital Governance Initiative, Government of India
+    </div>
+</div>
+
+</body>
+</html>
+

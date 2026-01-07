@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SevaSetu | Form Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+<!-- Top Bar -->
+<nav class="bg-indigo-900 text-white py-5 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 text-xl font-semibold">
+        SevaSetu – Smart Form Review
+    </div>
+</nav>
+
+<!-- Main Layout -->
+<section class="max-w-7xl mx-auto px-6 mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+    <!-- Form Section -->
+    <div class="lg:col-span-2 bg-white rounded-xl shadow-lg p-8 border-l-8 border-indigo-600">
+        <h2 class="text-2xl font-bold text-indigo-800 mb-6">
+            Pre-Filled Application Details
+        </h2>
+
+        <form action="/download" method="POST" class="space-y-4">
+
+            <input type="text" name="name" value="{{ data.name }}"
+                   class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-indigo-500"
+                   placeholder="Applicant Name">
+
+            <input type="text" name="dob" value="{{ data.dob }}"
+                   class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-green-500"
+                   placeholder="Date of Birth">
+
+            <input type="text" name="gender" value="{{ data.gender }}"
+                   class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                   placeholder="Gender">
+
+            <input type="text" name="address" value="{{ data.address }}"
+                   class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-orange-500"
+                   placeholder="Permanent Address">
+
+            <input type="text" name="id_number" value="{{ data.id_number }}"
+                   class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                   placeholder="Identification Number">
+
+            <button class="w-full bg-emerald-700 text-white py-4 rounded-xl font-semibold hover:bg-emerald-800 transition">
+                Download Completed Form
+            </button>
+        </form>
+    </div>
+
+    <!-- OCR Panel -->
+    <div class="bg-white rounded-xl shadow-lg p-6 border-l-8 border-orange-500">
+        <h3 class="text-xl font-semibold text-orange-700 mb-4">
+            Extracted OCR Text
+        </h3>
+
+        <pre class="bg-gray-100 p-4 rounded-lg h-[420px] overflow-y-auto text-sm">
+{{ raw_text }}
+        </pre>
+    </div>
+
+</section>
+
+<!-- Info Cards -->
+<section class="max-w-7xl mx-auto px-6 mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="bg-indigo-100 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="font-bold text-indigo-900">Supported Languages</h4>
+        <p>English, Hindi, Marathi</p>
+    </div>
+
+    <div class="bg-green-100 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="font-bold text-green-900">OCR Precision</h4>
+        <p>AI-Optimized (~90% accuracy)</p>
+    </div>
+
+    <div class="bg-orange-100 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="font-bold text-orange-900">User Verification</h4>
+        <p>Editable fields before final download</p>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="bg-indigo-900 text-white mt-16 py-6">
+    <div class="max-w-7xl mx-auto px-6 text-center text-sm">
+        © SevaSetu AI • National Digital Services Platform
+    </div>
+</footer>
+
+</body>
+</html>
